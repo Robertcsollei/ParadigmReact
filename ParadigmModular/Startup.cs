@@ -20,6 +20,7 @@ namespace ParadigmModular
 {
     public class Startup
     {
+        //Hello world
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
