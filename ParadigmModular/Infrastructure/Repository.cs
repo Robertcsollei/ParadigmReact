@@ -14,7 +14,7 @@ namespace ParadigmModular.Infrastructure
         public static List<Invoice> invoices = new List<Invoice>();
 
         static Repository()
-        {a
+        {
             // Here come the different textures
             Texture leatherTexture = new Texture() { Id = 1, TextureName = "Leather", TextureDesc = "This Leather makes you look rich&stuff", ImagePath = "models/strap.png", TexturePrice = 12.22m };
             Texture chromeTexture = new Texture() { Id = 2, TextureName = "Chrome", TextureDesc = "Feel the Gekko", ImagePath = "models/chrome.png", TexturePrice = 15.22m };

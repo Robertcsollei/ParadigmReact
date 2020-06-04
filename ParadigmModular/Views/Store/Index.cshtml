@@ -1,0 +1,47 @@
+﻿@using ParadigmModular.Models.ViewModels
+@model IEnumerable<WatchViewModel>
+@{
+    ViewData["Title"] = "Paradigm Watch Store";
+}
+
+
+<section id="storeDisclaimer">
+    <h2 class="disclaimer">PREMIUM QUALITY WATCHES</h2>
+    <p class="text">
+        A high-end futuristic watch tailor only for your hand!  Customize your own <br />
+        watch to the finest detail in our 3D watch editor
+    </p>
+</section>
+
+
+<section id="storeProductDisplay">
+    @await Html.PartialAsync("_SortingSection")
+
+    <div class="storeProducts">
+        @foreach (var item in Model)
+        {
+            <div class="storeProductContainer">
+                <a class="storeProductImage">
+                    <img src="~/Images/@item.Watch.WatchImagePath" alt="" />
+                </a>
+                <div class="storeProductDescription">
+                    <h2 class="storeWatchName">@item.Watch.Name</h2>
+                    <p class="storeWatchDesc">@item.Watch.Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget urna iaculis, efficitur felis at, venenatis est. Nullam convallis, </p>
+                    <div class="storeButtonsList">
+                        <form method="post">
+                            <button class="storeShop" asp-controller="ProductPage" asp-action="Index" asp-route-watchId="@item.Watch.Id.ToString()">Details</button>
+                            <button class="storeShop" asp-controller="ThreeD" asp-action="Index" asp-route-watchId="@item.Watch.Id.ToString()">Build your own</button>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+    </div>
+</section>
+
+<script src="~/js/Store.js" type="text/javascript">
+    console.log("Hello World")
+</script>

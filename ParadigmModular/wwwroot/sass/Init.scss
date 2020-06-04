@@ -1,0 +1,83 @@
+﻿
+$primary-color: #C3A261;
+$secondary-color: #1F2125;
+$highlight-color: #4580D9;
+$text-white: #fff;
+$transparent: rgba(0,0,0,0);
+
+$smallText: 1rem;
+$midText: 1.5rem;
+$bigText: 2rem;
+$HeroText: 5rem;
+
+$font: 'Roboto', sans-serif;
+$margin-top: 20px;
+
+@mixin flex($align, $direction, $justify, $display) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin base($width, $height, $left, $zindex, $position) {
+    width: $width;
+    height: $height;
+    left: $left;
+    z-index: $zindex;
+    position: $position;
+}
+
+@mixin space($margin, $padding) {
+    margin: $margin;
+    padding: $padding;
+}
+
+
+
+
+
+.fcsr {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.ibsr {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.iecr {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+
+
+//******************************
+body {
+    background-color: $secondary-color;
+    color: $text-white;
+    font-family: $font;
+    @include space(0,0);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    @include space(0,0);
+}
+
+ul {
+    list-style: none;
+}
+#page {
+    grid-template-columns: repeat(10, 1fr );
+    grid-template-rows: auto auto auto auto auto;
+    display: grid;
+    max-width: 100%;
+}

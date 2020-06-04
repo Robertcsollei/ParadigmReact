@@ -1,0 +1,84 @@
+﻿@import 'Init.scss';
+
+
+
+
+nav {
+    @include base(100%, 75px, auto, 3, fixed);
+    background-color: $transparent;
+    @extend .fcsr;
+    
+}
+
+#navContent {
+    @include base(80%, auto, auto, 0, relative);
+    @extend .ibsr;
+}
+
+#burgerMenu {
+    display: none;
+}
+
+.mobileContainer {
+    @extend .ibsr;
+    @include base(80%, 100px, auto, 0, relative);
+    @include space($margin-top 0 0 0, 0)
+}
+
+.logo {
+    @include space($margin-top 0, 0);
+    @extend .iecr;
+    @include base(8.5%, 50%, auto, 0, relative);
+    cursor: pointer;
+
+    > img {
+        max-height: 70%;
+        max-width: 40%;
+        cursor: pointer;
+    }
+
+    > h2 {
+        font-size: $smallText;
+        font-weight: 400;
+        @include space(0 0 0 $margin-top, 0);
+        cursor: pointer;
+    }
+}
+
+.navigation {
+    @extend .ibsr;
+    @include space(0, 0);
+    height: 100px;
+}
+
+.navigationItem > a, .loginItem > a {
+    color: $text-white;
+    font-weight: 400;
+    font-size: $smallText;
+}
+
+.navigationItem:hover, .loginItem:hover {
+    background-color: $transparent;
+}
+
+.navigationItem {
+    @include space(0, 0);
+}
+
+.login {
+    @extend .ibsr;
+    @include space(0, 0);
+    height: 100px;
+}
+
+.loginItem {
+    @include space(0 0 0 $margin-top, 0);
+}
+
+.heroContent {
+    grid-template-columns: repeat(10, 9.8vw );
+}
+
+#mobile1 #mobile2 {
+    display: inline-flex;
+}

@@ -1,0 +1,71 @@
+﻿@using ParadigmModular.Models.ViewModels;
+@using ParadigmModular.Models;
+@using ParadigmModular.Infrastructure;
+@using Newtonsoft.Json;
+@model WatchViewModel
+
+
+@{
+    ViewData["Title"] = Model.Watch.Name;
+}
+
+
+
+<div id="ThreeDPage">
+
+    <div class="load">
+        <div id="loaderContainer">
+
+        </div>
+    </div>
+
+
+    <div class="guiContainer">
+        <div id="threeGui">
+
+            <ul id="GUI">
+            </ul>
+        </div>
+    </div>
+
+    <div class="buttonContainer">
+        <form id="@Model.Watch.Id" asp-action="AddToCart"
+              asp-controller="Cart" method="post" class="targetForm">
+            <input id="CreatedProductParts" type="hidden" name="ProductId" value="1-1-2-3-4-5-6-7-8" />
+            <input type="hidden" name="returnUrl"
+                   value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+            <span class="">
+                <button type="submit"
+                        class="btn secbtn">
+                    Add To Cart
+                </button>
+            </span>
+        </form>
+        <button class="btn prmbtn">Config Details</button>
+    </div>
+
+
+    <div id="ThreeDBackgroundSelector">
+        <select id="bgDropDown">
+            @foreach (var item in ViewBag.BGNames)
+            {
+                <option id="bgOption" class="backgroundOption">@item.Text</option>
+            }
+        </select>
+    </div>
+
+
+    <p id="watchId" class="hidden">@Model.Watch.Id</p>
+
+    <div id="canvas" class="ThreeDBackgroundSelector">
+
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="~/js/WatchPartsJSON.js"></script>
+<script src="~/js/Three.js"></script>
+<script src="~/js/GLTFLoader.js" type="module"></script>
+<script src="~/js/TrackballControls.js" type="module"></script>
+<script src="~/js/3dPlayground.js" type="module"></script>
