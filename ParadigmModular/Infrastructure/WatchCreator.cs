@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ParadigmModular.Infrastructure
 {
+    // Funny comment
     public class WatchCreator // This class was created so we can fill up a watch object elegantly
     {
         ParadigmModularContext DB;
